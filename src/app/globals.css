@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  @apply bg-white text-slate-800;
+}
+
+section {
+  @apply py-16 md:py-20 lg:py-24;
+}
+
+/* Custom scrollbar - Amber theme */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  border-radius: 6px;
+  border: 3px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d97706, #92400e);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #92400e, #78350f);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f59e0b #f1f5f9;
+}
+
+/* Ensure scrollbar is always visible */
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Improve lighting on all sections */
+.bg-slate-50 {
+  background-color: #fffbeb;
+}
+
+.bg-slate-100 {
+  background-color: #fef9c3;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply border-2 border-amber-500 text-amber-600 px-6 py-3 rounded-full font-semibold hover:bg-amber-500 hover:text-white transition-all duration-300;
+}
