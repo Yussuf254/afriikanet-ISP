@@ -8,7 +8,7 @@ import { getImagePrefix } from "@/utils/util";
 import Logo from "./Logo";
 import HeaderLink from "../Header/Navigation/HeaderLink";
 import MobileHeaderLink from "../Header/Navigation/MobileHeaderLink";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 const Header: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);

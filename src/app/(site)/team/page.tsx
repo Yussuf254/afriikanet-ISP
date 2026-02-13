@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Team from "@/components/Home/Mentor";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 export const metadata: Metadata = {
     title: "Our Team - Afriikanet",

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { DocNavigation } from "./DocNavigation";
 

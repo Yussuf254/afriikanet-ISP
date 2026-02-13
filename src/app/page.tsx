@@ -6,7 +6,7 @@ import Testimonials from "@/components/Home/Testimonials";
 import Newsletter from "@/components/Home/Newsletter";
 import OgulaChatbot from "@/components/Home/OgulaChatbot";
 import { Metadata } from "next";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 export const metadata: Metadata = {
   title: "Afriikanet - ISP Billing System",

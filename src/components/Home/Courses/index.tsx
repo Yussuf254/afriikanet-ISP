@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 // Animated Counter Component
 const Counter = ({ value, suffix, label }: { value: string; suffix: string; label: string }) => {

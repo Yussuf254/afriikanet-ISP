@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 const positions = [
     {

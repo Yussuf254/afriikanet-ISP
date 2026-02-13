@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 const MobileHeaderLink: React.FC<{ item: HeaderItem; onNavigate?: () => void }> = ({ item, onNavigate }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "../Header/Logo";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import { quickLinks, companyLinks, legalLinks } from "../Header/Navigation/menuData";
 
 const Footer = () => {
