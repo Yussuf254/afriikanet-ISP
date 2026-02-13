@@ -73,37 +73,56 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    {/* Stats Section */}
+                    {/* Why Choose Afriikanet Section */}
                     <div className="mt-20">
-                        <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Why Choose Afriikanet?</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div className="bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-amber-100">
-                                <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Icon icon="solar:users-group-bold" className="text-amber-600 text-2xl" />
+                        <h2 className="text-3xl font-bold text-slate-900 text-center mb-8">Why Choose Afriikanet?</h2>
+                        <div className="max-w-4xl mx-auto">
+                            <div className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-xl p-8 text-white mb-6">
+                                <div className="flex items-start gap-4">
+                                    <Icon icon="solar:users-group-bold" className="text-3xl mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-bold mb-2">500+ Active ISPs</h3>
+                                        <p className="text-white/90">
+                                            Join hundreds of Internet Service Providers across Africa who trust Afriikanet for their billing operations.
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-4xl font-bold text-amber-600 mb-2">500+</p>
-                                <p className="text-slate-600">Active ISPs</p>
                             </div>
-                            <div className="bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-green-100">
-                                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Icon icon="solar:shield-check-bold" className="text-green-600 text-2xl" />
+                            
+                            <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-8 text-white mb-6">
+                                <div className="flex items-start gap-4">
+                                    <Icon icon="solar:shield-check-bold" className="text-3xl mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-bold mb-2">99.9% Uptime SLA</h3>
+                                        <p className="text-white/90">
+                                            Our reliable infrastructure ensures your billing system stays operational around the clock.
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-4xl font-bold text-green-600 mb-2">99.9%</p>
-                                <p className="text-slate-600">Uptime SLA</p>
                             </div>
-                            <div className="bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-orange-100">
-                                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Icon icon="solar:headphone-bold" className="text-orange-600 text-2xl" />
+                            
+                            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl p-8 text-white mb-6">
+                                <div className="flex items-start gap-4">
+                                    <Icon icon="solar:headphone-bold" className="text-3xl mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-bold mb-2">24/7 Support</h3>
+                                        <p className="text-white/90">
+                                            Our dedicated support team is available around the clock to assist you with any issues or questions.
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-4xl font-bold text-orange-600 mb-2">24/7</p>
-                                <p className="text-slate-600">Support</p>
                             </div>
-                            <div className="bg-white rounded-xl p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-amber-100">
-                                <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Icon icon="solar:users-bold" className="text-amber-600 text-2xl" />
+                            
+                            <div className="bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl p-8 text-white">
+                                <div className="flex items-start gap-4">
+                                    <Icon icon="solar:users-bold" className="text-3xl mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-bold mb-2">50K+ Users Managed</h3>
+                                        <p className="text-white/90">
+                                            Our platform successfully manages over 50,000 end users for ISPs across the continent.
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-4xl font-bold text-amber-600 mb-2">50K+</p>
-                                <p className="text-slate-600">Users Managed</p>
                             </div>
                         </div>
                     </div>
