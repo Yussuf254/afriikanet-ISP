@@ -5,6 +5,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { ThemeProvider } from "next-themes";
 import ScrollToTop from "@/components/ScrollToTop";
+import Script from "next/script";
 
 const font = Montserrat({ 
   subsets: ["latin"], 
@@ -41,6 +42,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ScrollToTop />
+          <Script src="https://code.iconify.design/3/3.1.0/iconify.min.js" />
         </ThemeProvider>
       </body>
     </html>
