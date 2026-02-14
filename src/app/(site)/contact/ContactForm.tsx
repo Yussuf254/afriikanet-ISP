@@ -32,6 +32,7 @@ export default function ContactForm() {
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
 
     const validateForm = (): boolean => {
         const newErrors: FormErrors = {};
@@ -81,33 +82,39 @@ export default function ContactForm() {
         setIsSubmitting(true);
 
         try {
-            const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
-            const body = `
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Company: ${formData.companyName || "N/A"}
-
-Message:
-${formData.message}
-            `.trim();
-
-            const mailtoUrl = `mailto:info@afriikanet.co.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoUrl;
-
-            setIsSuccess(true);
-            setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                phone: "",
-                companyName: "",
-                message: "",
+            // Submit form data to API endpoint
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
 
-            setTimeout(() => setIsSuccess(false), 5000);
+            const result = await response.json();
+
+            if (result.success) {
+                setIsSuccess(true);
+                setSuccessMessage(result.message || 'Thank you for contacting us! We have received your message and will get back to you within 24 hours.');
+                setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    phone: "",
+                    companyName: "",
+                    message: "",
+                });
+                setTimeout(() => {
+                    setIsSuccess(false);
+                    setSuccessMessage('');
+                }, 5000);
+            } else {
+                console.error('Form submission failed:', result.message);
+                alert(result.message || 'Failed to submit form. Please try again.');
+            }
         } catch (error) {
-            console.error("Error sending email:", error);
+            console.error('Error sending form:', error);
+            alert('An error occurred. Please try again later.');
         } finally {
             setIsSubmitting(false);
         }
@@ -171,7 +178,7 @@ ${formData.message}
                             <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg">
                                 <div className="flex items-center gap-2 text-green-700">
                                     <Icon icon="solar:check-circle-bold" className="text-xl" />
-                                    <span className="font-medium">Message sent successfully!</span>
+                                    <span className="font-medium">{successMessage}</span>
                                 </div>
                             </div>
                         )}
