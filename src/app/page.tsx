@@ -1,12 +1,15 @@
 import React from "react";
 import Hero from "@/components/Home/Hero";
-import Courses from "@/components/Home/Courses";
-import Team from "@/components/Home/Mentor";
-import Testimonials from "@/components/Home/Testimonials";
-import Newsletter from "@/components/Home/Newsletter";
-import OgulaChatbot from "@/components/Home/OgulaChatbot";
 import { Metadata } from "next";
 import { Icon } from "@iconify/react";
+import dynamic from 'next/dynamic';
+
+const Courses = dynamic(() => import("@/components/Home/Courses"), { ssr: false });
+const Team = dynamic(() => import("@/components/Home/Mentor"), { ssr: false });
+const Testimonials = dynamic(() => import("@/components/Home/Testimonials"), { ssr: false });
+const Newsletter = dynamic(() => import("@/components/Home/Newsletter"), { ssr: false });
+const OgulaChatbot = dynamic(() => import("@/components/Home/OgulaChatbot"), { ssr: false });
+const AnimatedCounter = dynamic(() => import("@/components/Home/AnimatedCounter"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Afriikanet - ISP Billing System",
@@ -151,19 +154,19 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-6">Key Statistics</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 rounded-xl px-3 py-4 text-center border border-white/10">
-                    <p className="text-3xl font-bold">500+</p>
+                    <p className="text-3xl font-bold"><AnimatedCounter value="500+" /></p>
                     <p className="text-white/80 text-sm">Active ISPs</p>
                   </div>
                   <div className="bg-white/10 rounded-xl px-3 py-4 text-center border border-white/10">
-                    <p className="text-3xl font-bold">50K+</p>
+                    <p className="text-3xl font-bold"><AnimatedCounter value="50K+" /></p>
                     <p className="text-white/80 text-sm">Users Managed</p>
                   </div>
                   <div className="bg-white/10 rounded-xl px-3 py-4 text-center border border-white/10">
-                    <p className="text-3xl font-bold">99.9&#37;</p>
+                    <p className="text-3xl font-bold"><AnimatedCounter value="99.9%" /></p>
                     <p className="text-white/80 text-sm">Uptime SLA</p>
                   </div>
                   <div className="bg-white/10 rounded-xl px-3 py-4 text-center border border-white/10">
-                    <p className="text-3xl font-bold">24&#x2F;7</p>
+                    <p className="text-3xl font-bold">24/7</p>
                     <p className="text-white/80 text-sm">Support</p>
                   </div>
                 </div>

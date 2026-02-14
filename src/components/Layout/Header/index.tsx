@@ -93,7 +93,7 @@ const Header: React.FC = () => {
         )}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 left-0 h-full w-85 max-w-[85%] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 ${navbarOpen ? "translate-x-0" : "-translate-x-full"
+          className={`lg:hidden fixed top-0 left-0 h-screen w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 overflow-y-auto ${navbarOpen ? "translate-x-0" : "-translate-x-full"
             } z-50`}
         >
           {/* Menu Header with Logo */}
@@ -107,8 +107,8 @@ const Header: React.FC = () => {
                 className="h-10 w-10 rounded-lg object-contain bg-white/10"
               />
               <div>
-                <p className="text-white font-bold text-lg">Afriikanet</p>
-                <p className="text-amber-400 text-xs">ISP Solutions</p>
+                <p className="text-white text-lg">Afriikanet</p>
+                <p className="text-amber-400 text-xs">Innovating The Future</p>
               </div>
             </Link>
             <button
@@ -121,7 +121,7 @@ const Header: React.FC = () => {
           </div>
           
           {/* Navigation Links */}
-          <div className="flex-1 overflow-y-auto p-4">
+          <div className="p-4">
             <nav className="flex flex-col space-y-2">
               {headerData.map((item, index) => (
                 <MobileHeaderLink key={index} item={item} onNavigate={() => setNavbarOpen(false)} />
@@ -156,43 +156,42 @@ const Header: React.FC = () => {
           </div>
           
           {/* Social Media Links */}
-          <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-amber-500/30 bg-slate-900">
-            <p className="text-amber-400 text-sm text-center mb-4">Connect With Us</p>
-            <div className="flex justify-center gap-4">
+          <div className="border-t border-amber-500/30 p-3">
+            <div className="flex justify-center gap-3">
               <a
                 href="https://www.facebook.com/share/17wMQyQ798/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center transition-all hover:scale-110"
+                className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-blue-600 hover:to-blue-700 flex items-center justify-center transition-all hover:scale-110"
               >
-                <Icon icon="brandico:facebook" className="text-white w-5 h-5" />
+                <Icon icon="brandico:facebook" className="text-white w-4 h-4" />
               </a>
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-sky-500 hover:to-sky-600 flex items-center justify-center transition-all hover:scale-110"
+                className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-sky-500 hover:to-sky-600 flex items-center justify-center transition-all hover:scale-110"
               >
-                <Icon icon="entypo-social:twitter" className="text-white w-5 h-5" />
+                <Icon icon="entypo-social:twitter" className="text-white w-4 h-4" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-blue-700 hover:to-blue-800 flex items-center justify-center transition-all hover:scale-110"
+                className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-blue-700 hover:to-blue-800 flex items-center justify-center transition-all hover:scale-110"
               >
-                <Icon icon="entypo-social:linkedin" className="text-white w-5 h-5" />
+                <Icon icon="entypo-social:linkedin" className="text-white w-4 h-4" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center transition-all hover:scale-110"
+                className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-pink-600 hover:to-pink-700 flex items-center justify-center transition-all hover:scale-110"
               >
-                <Icon icon="entypo-social:instagram" className="text-white w-5 h-5" />
+                <Icon icon="entypo-social:instagram" className="text-white w-4 h-4" />
               </a>
             </div>
-            <p className="text-white/50 text-xs text-center mt-4">© 2024 Afriikanet. All rights reserved.</p>
+            <p className="text-amber-300 text-xs text-center mt-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-400 drop-shadow-[0_0_12px_rgba(251,191,36,0.8)] filter">Connect With Us</p>
           </div>
         </div>
       </div>

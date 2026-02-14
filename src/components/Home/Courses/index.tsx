@@ -194,16 +194,6 @@ const Pricing = () => {
                         </div>
                     ))}
                 </div>
-
-                {/* Counter Section */}
-                <div className='mb-16 bg-white rounded-xl p-6 md:p-8 shadow-lg border border-amber-100'>
-                    <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8'>
-                        <Counter value="500+" suffix="+" label="Active ISPs" />
-                        <Counter value="99.9%" suffix="" label="Uptime SLA" />
-                        <Counter value="24/7" suffix="" label="Support" />
-                        <Counter value="50K+" suffix="+" label="Users Managed" />
-                    </div>
-                </div>
             </div>
         </section>
     );
