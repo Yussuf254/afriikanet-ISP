@@ -8,7 +8,6 @@ const Courses = dynamic(() => import("@/components/Home/Courses"), { ssr: false 
 const Team = dynamic(() => import("@/components/Home/Mentor"), { ssr: false });
 const Testimonials = dynamic(() => import("@/components/Home/Testimonials"), { ssr: false });
 const Newsletter = dynamic(() => import("@/components/Home/Newsletter"), { ssr: false });
-const OgulaChatbot = dynamic(() => import("@/components/Home/OgulaChatbot"), { ssr: false });
 const AnimatedCounter = dynamic(() => import("@/components/Home/AnimatedCounter"), { ssr: false });
 
 export const metadata: Metadata = {
@@ -180,7 +179,6 @@ export default function Home() {
       <Team />
       <Testimonials />
       <Newsletter />
-      <OgulaChatbot />
     </main>
   );
 }
