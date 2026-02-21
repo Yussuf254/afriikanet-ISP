@@ -50,12 +50,12 @@ export default function TeamPage() {
                                 </div>
                             </div>
                             <div className="relative bg-gradient-to-br from-amber-50 to-slate-100 p-8 flex flex-col justify-center items-center text-center border-l border-amber-100">
-                                <div className="relative w-full max-w-xs mx-auto mb-6 rounded-xl overflow-hidden border-4 border-amber-300 shadow-xl">
+                                <div className="relative w-40 h-40 sm:w-48 sm:h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-amber-300 shadow-xl">
                                     <Image
                                         src="/images/mentor/user1.jpg"
                                         alt="CEO - Hamisi Yusuf Suleiman"
                                         fill
-                                        className="object-cover"
+                                        className="object-cover object-center"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                 </div>

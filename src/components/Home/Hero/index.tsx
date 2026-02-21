@@ -55,7 +55,7 @@ const Hero = () => {
                                 Our Services
                             </Link>
                         </div>
-                        <div className='flex flex-wrap gap-4 sm:gap-6 pt-4 justify-center'>
+                        <div className='flex flex-wrap gap-x-4 gap-y-2 sm:gap-6 pt-4 justify-center sm:justify-start'>
                             <div className='flex items-center gap-2 sm:gap-3'>
                                 <div className='bg-green-500/20 p-2 sm:p-3 rounded-full'>
                                     <Icon icon="solar:check-circle-bold" className="text-green-400 text-lg sm:text-xl" />

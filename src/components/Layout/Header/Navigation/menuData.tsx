@@ -2,10 +2,6 @@ import { HeaderItem } from "@/types/menu";
 
 export const headerData: HeaderItem[] = [
   { label: "Home", href: "/" },
-  { label: "Solutions", href: "/#solutions" },
-  { label: "Features", href: "/#features" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "Testimonials", href: "/#testimonials" },
   { 
     label: "Company", 
     href: "/company",
@@ -20,6 +16,10 @@ export const headerData: HeaderItem[] = [
       { label: "Terms & Conditions", href: "/terms", icon: "heroicons:scale" },
     ]
   },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Testimonials", href: "/#testimonials" },
   { label: "Contact", href: "/contact" },
 ];
 
