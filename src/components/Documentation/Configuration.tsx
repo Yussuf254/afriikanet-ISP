@@ -5,17 +5,17 @@ export const Configuration = () => {
   return (
     <>
       <div className="pb-10 md:scroll-m-[180px] scroll-m-28" id="configuration">
-        <h3 className="text-2xl font-semibold mt-4 text-slate-900">Project Configuration</h3>
+        <h3 className="text-xl md:text-2xl font-semibold mt-4 text-slate-900">Project Configuration</h3>
         <p className="text-slate-600 mt-2">Learn how to configure and customize your Afriikanet ISP Billing System.</p>
 
         {/* Color Theme */}
-        <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200 mt-6">
-          <h4 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 md:p-6 border border-amber-200 mt-6">
+          <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
             <Icon icon="solar:palette-bold" className="text-amber-600" />
             Color Theme
           </h4>
           <p className="text-slate-600 mb-4">Afriikanet uses a professional amber and orange color scheme that represents African warmth and innovation.</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4">
             <div className="bg-amber-500 p-4 rounded-lg text-white text-center">
               <p className="font-semibold">Amber</p>
               <p className="text-sm opacity-80">Primary</p>
@@ -36,12 +36,12 @@ export const Configuration = () => {
         </div>
 
         {/* Billing Configuration */}
-        <div className="bg-white rounded-xl p-6 border border-amber-200 shadow-lg mt-6">
-          <h4 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+        <div className="bg-white rounded-xl p-4 md:p-6 border border-amber-200 shadow-lg mt-6">
+          <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
             <Icon icon="solar:bill-list-bold" className="text-amber-600" />
             Billing Configuration
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             <div className="bg-slate-50 rounded-lg p-4">
               <h5 className="font-semibold text-slate-900 mb-2">Invoice Settings</h5>
               <ul className="space-y-2 text-slate-600 text-sm">
@@ -80,8 +80,8 @@ export const Configuration = () => {
         </div>
 
         {/* Customer Management */}
-        <div className="bg-white rounded-xl p-6 border border-amber-200 shadow-lg mt-6">
-          <h4 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+        <div className="bg-white rounded-xl p-4 md:p-6 border border-amber-200 shadow-lg mt-6">
+          <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
             <Icon icon="solar:users-group-two-rounded-bold" className="text-amber-600" />
             Customer Management
           </h4>
@@ -102,8 +102,8 @@ export const Configuration = () => {
         </div>
 
         {/* Support Settings */}
-        <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-6 text-white mt-6">
-          <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+        <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 md:p-6 text-white mt-6">
+          <h4 className="text-lg md:text-xl font-semibold mb-4 flex items-center gap-2">
             <Icon icon="solar:headset-calling-bold" className="text-amber-400" />
             Support Configuration
           </h4>

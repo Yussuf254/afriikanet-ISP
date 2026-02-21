@@ -37,16 +37,16 @@ export const DocNavigation = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-0.5 mt-4 items-start fixed pe-4">
+    <div className="flex flex-col gap-0.5 mt-4 items-start pe-4 w-full">
       {DocsNav.map((item) => {
         return (
           <Link
             key={item.id}
             href={`#${item.hash}`}
             onClick={() => getNavItem(item.hash)}
-            className={`py-2.5 hover:bg-primary/20 hover:text-primary dark:hover:text-primary xl:min-w-60 lg:min-w-52 min-w-full px-4 rounded-md text-base font-medium  ${item.hash === navItem
+            className={`py-2.5 hover:bg-primary/20 hover:text-primary dark:hover:text-primary w-full px-4 rounded-md text-sm font-medium md:text-base ${item.hash === navItem
               ? "bg-primary text-white"
-              : "text-black/60"
+              : "text-black/60 dark:text-white/60"
               }`}
           >
             {item.navItem}

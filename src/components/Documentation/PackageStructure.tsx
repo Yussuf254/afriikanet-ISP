@@ -5,12 +5,12 @@ import Link from "next/link";
 export const PackageStructure = () => {
   return (
     <div id="userguide" className="md:scroll-m-[130px] scroll-m-28">
-      <h3 className="text-2xl font-semibold mt-8 text-slate-900">
+      <h3 className="text-xl md:text-2xl font-semibold mt-8 text-slate-900">
         Package Structure
       </h3>
       
       {/* Getting Started */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200 mt-6">
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 md:p-6 border border-amber-200 mt-6">
         <div className="flex items-center gap-4 mb-4">
           <div className="bg-amber-100 p-3 rounded-lg">
             <Icon icon="solar:rocket-bold" className="text-amber-600 text-2xl" />
@@ -33,7 +33,7 @@ export const PackageStructure = () => {
           How to Register
         </h4>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           <div className="bg-white rounded-xl p-6 border border-amber-200 shadow-lg">
             <div className="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
               <span className="text-amber-600 font-bold text-lg">1</span>
@@ -91,7 +91,7 @@ export const PackageStructure = () => {
           Key Features
         </h4>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <div className="bg-white rounded-xl p-6 border border-amber-200">
             <div className="flex items-start gap-4">
               <div className="bg-amber-100 p-3 rounded-lg">
@@ -191,7 +191,7 @@ export const PackageStructure = () => {
           Quick Links
         </h4>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link 
             href="/agreement"
             className="bg-white rounded-xl p-6 border border-amber-200 hover:shadow-xl transition-all hover:-translate-y-1 flex items-center gap-4"
@@ -251,8 +251,8 @@ export const PackageStructure = () => {
       </div>
 
       {/* Contact Information */}
-      <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-8 text-white">
-        <h4 className="text-xl font-semibold mb-6 flex items-center gap-2">
+      <div className="mt-12 bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 md:p-8 text-white">
+        <h4 className="text-lg md:text-xl font-semibold mb-6 flex items-center gap-2">
           <Icon icon="solar:phone-bold" className="text-amber-400" />
           Need Help?
         </h4>

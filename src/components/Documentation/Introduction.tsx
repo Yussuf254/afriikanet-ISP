@@ -17,8 +17,8 @@ export const Introduction = () => {
           />
         )}
 
-        <div className="flex items-center justify-between">
-          <h3 className="text-2xl mt-4 font-semibold mb-6 text-slate-900">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <h3 className="text-xl md:text-2xl mt-4 font-semibold mb-6 md:mb-0 text-slate-900">
             Afriikanet Documentation
           </h3>
           <button onClick={() => setDocNavbarOpen(true)} className="p-0">
@@ -38,7 +38,7 @@ export const Introduction = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
           <div className="bg-white rounded-xl p-6 shadow-lg border border-amber-100">
             <div className="bg-amber-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <Icon icon="solar:box-bold" className="text-amber-600 text-2xl" />

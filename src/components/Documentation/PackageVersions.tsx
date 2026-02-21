@@ -39,12 +39,12 @@ export const PackageVersions = () => {
       </p>
 
       {/* Production Dependencies */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200 mt-6">
-        <h4 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4 md:p-6 border border-amber-200 mt-6">
+        <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
           <Icon icon="solar:box-bold" className="text-amber-600" />
           Production Dependencies
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
           {dependencies.map((dep, index) => (
             <div
               key={index}
@@ -60,12 +60,12 @@ export const PackageVersions = () => {
       </div>
 
       {/* Development Dependencies */}
-      <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm mt-6">
-        <h4 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+      <div className="bg-white rounded-xl p-4 md:p-6 border border-slate-200 shadow-sm mt-6">
+        <h4 className="text-lg md:text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
           <Icon icon="solar:code-bold" className="text-slate-600" />
           Development Dependencies
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
           {devDependencies.map((dep, index) => (
             <div
               key={index}
@@ -81,12 +81,12 @@ export const PackageVersions = () => {
       </div>
 
       {/* Project Info */}
-      <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-6 text-white mt-6">
-        <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+      <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-xl p-4 md:p-6 text-white mt-6">
+        <h4 className="text-lg md:text-xl font-semibold mb-4 flex items-center gap-2">
           <Icon icon="solar:info-circle-bold" className="text-amber-400" />
           Project Information
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
           <div className="bg-white/10 rounded-lg p-4">
             <p className="text-slate-400 text-sm">Project Name</p>
             <p className="font-semibold text-lg">Afriikanet</p>
