@@ -54,7 +54,7 @@ const Testimonials = () => {
                     <Slider {...settings}>
                         {TestimonialData.slice(0, 6).map((item, i) => (
                             <div key={i} className="px-2">
-                                <div className='px-4 py-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full'>
+                                <div className='px-4 py-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 md:hover:-translate-y-2 overflow-hidden h-full'>
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
                                             <Image 

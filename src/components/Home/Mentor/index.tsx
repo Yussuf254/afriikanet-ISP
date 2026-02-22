@@ -50,8 +50,8 @@ const Team = () => {
                 <Slider {...settings}>
                     {MentorData.map((member, i) => (
                         <div key={i}>
-                            <div className='m-3 text-center px-4 py-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2'>
-                                <div className="relative mb-6 flex justify-center">
+                            <div className='m-3 text-center px-4 py-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 md:hover:-translate-y-2 overflow-hidden h-full flex flex-col'>
+                                <div className="relative mb-6 flex justify-center shrink-0">
                                     <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full overflow-hidden border-4 border-amber-100 shadow-lg">
                                         <Image
                                             src={`${getImagePrefix()}${member.imgSrc}`}
@@ -63,7 +63,7 @@ const Team = () => {
                                         />
                                     </div>
                                 </div>
-                                <div>
+                                <div className="mt-auto">
                                     <h3 className='text-xl font-bold text-slate-900'>{member.name}</h3>
                                     <h4 className='text-amber-600 font-medium mt-1'>{member.profession}</h4>
                                 </div>
