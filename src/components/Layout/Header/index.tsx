@@ -48,6 +48,10 @@ const Header: React.FC = () => {
     }
   }, [isSignInOpen, navbarOpen]);
 
+  const closeMenu = () => {
+    setNavbarOpen(false);
+  };
+
   return (
     <header
       className={`fixed top-0 z-40 w-full transition-all duration-300 ${sticky 
@@ -88,17 +92,21 @@ const Header: React.FC = () => {
             </button>
           </div>
         </div>
-        {navbarOpen && (
-          <div className="fixed top-0 left-0 w-full h-full bg-black/70 z-40" onClick={() => setNavbarOpen(false)} />
-        )}
+        
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`lg:hidden fixed inset-0 bg-black/70 z-40 transition-opacity duration-300 ${navbarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+          onClick={closeMenu}
+        />
+        
+        {/* Mobile Menu */}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 left-0 h-screen w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 overflow-y-auto ${navbarOpen ? "translate-x-0" : "-translate-x-full"
-            } z-50`}
+          className={`lg:hidden fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 z-50 flex flex-col ${navbarOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           {/* Menu Header with Logo */}
-          <div className="flex items-center justify-between p-5 border-b border-amber-500/30">
-            <Link href="/" className="flex items-center gap-3" onClick={() => setNavbarOpen(false)}>
+          <div className="flex items-center justify-between p-4 border-b border-amber-500/30 shrink-0">
+            <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
               <Image
                 src={`${getImagePrefix()}images/logo/logo.jpeg`}
                 alt="Afriikanet - ISP Billing Solutions"
@@ -112,7 +120,7 @@ const Header: React.FC = () => {
               </div>
             </Link>
             <button
-              onClick={() => setNavbarOpen(false)}
+              onClick={closeMenu}
               className="p-2 rounded-lg hover:bg-white/10 transition-colors"
               aria-label="Close menu"
             >
@@ -120,25 +128,25 @@ const Header: React.FC = () => {
             </button>
           </div>
           
-          {/* Navigation Links */}
-          <div className="p-4">
+          {/* Navigation Links - Scrollable */}
+          <div className="flex-1 overflow-y-auto p-4">
             <nav className="flex flex-col space-y-2">
               {headerData.map((item, index) => (
-                <MobileHeaderLink key={index} item={item} onNavigate={() => setNavbarOpen(false)} />
+                <MobileHeaderLink 
+                  key={index} 
+                  item={item} 
+                  onNavigate={closeMenu}
+                />
               ))}
             </nav>
           </div>
           
           {/* CTA Buttons */}
-          <div className="p-4 space-y-3 mt-4">
+          <div className="p-4 space-y-3 shrink-0 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent">
             <Link
               href="#"
               className="w-full text-center bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-white px-4 py-3 rounded-xl font-medium hover:from-amber-500/30 hover:to-orange-500/30 transition-all flex items-center justify-center gap-2 border border-amber-500/30"
-              onClick={() => {
-                setNavbarOpen(false);
-                setIsSignInOpen(true);
-                setNavbarOpen(false);
-              }}
+              onClick={closeMenu}
             >
               <Icon icon="heroicons:arrow-right-on-rectangle" className="w-5 h-5" />
               Sign In
@@ -146,9 +154,7 @@ const Header: React.FC = () => {
             <Link
               href="/contact"
               className="w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-white px-4 py-3 rounded-xl font-medium hover:from-amber-600 hover:to-orange-600 transition-all flex items-center justify-center gap-2 shadow-lg"
-              onClick={() => {
-                setNavbarOpen(false);
-              }}
+              onClick={closeMenu}
             >
               <Icon icon="heroicons:rocket-launch" className="w-5 h-5" />
               Get Started
@@ -156,7 +162,7 @@ const Header: React.FC = () => {
           </div>
           
           {/* Social Media Links */}
-          <div className="border-t border-amber-500/30 p-3">
+          <div className="border-t border-amber-500/30 p-4 shrink-0 bg-slate-900">
             <div className="flex justify-center gap-3">
               <a
                 href="https://www.facebook.com/share/17wMQyQ798/"
@@ -191,7 +197,7 @@ const Header: React.FC = () => {
                 <Icon icon="entypo-social:instagram" className="text-white w-4 h-4" />
               </a>
             </div>
-            <p className="text-amber-300 text-xs text-center mt-2 bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-400 drop-shadow-[0_0_12px_rgba(251,191,36,0.8)] filter">Connect With Us</p>
+            <p className="text-amber-300 text-xs text-center mt-2">Connect With Us</p>
           </div>
         </div>
       </div>

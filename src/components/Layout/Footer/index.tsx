@@ -82,7 +82,7 @@ const Footer = () => {
             <h3 className="mb-6 text-lg font-semibold text-white">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="bg-amber-500/20 p-3 rounded-lg">
+                <div className="bg-amber-500/20 p-3 rounded-lg shrink-0">
                   <Icon icon="tabler:map-pin" className="text-amber-400 text-xl" />
                 </div>
                 <div>
@@ -91,7 +91,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="bg-amber-500/20 p-3 rounded-lg">
+                <div className="bg-amber-500/20 p-3 rounded-lg shrink-0">
                   <Icon icon="tabler:phone" className="text-amber-400 text-xl" />
                 </div>
                 <div>
@@ -100,7 +100,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="bg-amber-500/20 p-3 rounded-lg">
+                <div className="bg-amber-500/20 p-3 rounded-lg shrink-0">
                   <Icon icon="tabler:mail" className="text-amber-400 text-xl" />
                 </div>
                 <div>
@@ -112,9 +112,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left'>
-          <p className='text-slate-400 text-sm text-center lg:text-start'>© 2025 Pioneer Afriikanet Technologies Ltd. All Rights Reserved.</p>
-          <div className="flex gap-6 justify-center lg:justify-start">
+        <div className='mt-12 pt-8 border-t border-white/10'>
+          <div className="flex flex-col items-center text-center gap-2">
+            <p className='text-slate-400 text-sm'>© 2025 Pioneer Afriikanet Technologies Ltd.</p>
+            <p className='text-slate-400 text-sm'>All Rights Reserved.</p>
+          </div>
+          <div className="flex gap-6 justify-center mt-4">
             <Link href="/privacy" className='text-slate-400 text-sm hover:text-amber-400 transition-colors'>Privacy Policy</Link>
             <Link href="/terms" className='text-slate-400 text-sm hover:text-amber-400 transition-colors'>Terms & Conditions</Link>
           </div>

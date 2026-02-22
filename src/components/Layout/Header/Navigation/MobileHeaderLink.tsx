@@ -1,14 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { Icon } from "@iconify/react";
+import { usePathname } from "next/navigation";
 
-const MobileHeaderLink: React.FC<{ item: HeaderItem; onNavigate?: () => void }> = ({ item, onNavigate }) => {
-  const [submenuOpen, setSubmenuOpen] = useState(false);
+const MobileHeaderLink: React.FC<{ 
+  item: HeaderItem; 
+  onNavigate?: () => void;
+  isOpen?: boolean;
+  onSubmenuToggle?: () => void;
+}> = ({ item, onNavigate, isOpen = false, onSubmenuToggle }) => {
+  const [submenuOpen, setSubmenuOpen] = useState(isOpen);
+  const pathname = usePathname();
+  
+  useEffect(() => {
+    setSubmenuOpen(isOpen);
+  }, [isOpen]);
+
+  useEffect(() => {
+    // Close submenu when navigating
+    if (onNavigate) {
+      setSubmenuOpen(false);
+    }
+  }, [pathname]);
 
   const handleToggle = () => {
     if (item.submenu) {
-      setSubmenuOpen(!submenuOpen);
+      const newState = !submenuOpen;
+      setSubmenuOpen(newState);
+      if (onSubmenuToggle) {
+        onSubmenuToggle();
+      }
     }
   };
 
@@ -44,12 +66,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem; onNavigate?: () => void }> 
               key={index}
               href={subItem.href}
               className="block py-2 px-4 text-white/70 hover:text-amber-400 hover:bg-gradient-to-r hover:from-amber-500/10 hover:to-orange-500/10 rounded-lg transition-all"
-              onClick={() => {
-                setSubmenuOpen(false);
-                if (onNavigate) {
-                  onNavigate();
-                }
-              }}
+              onClick={handleClick}
             >
               {subItem.label}
             </Link>
