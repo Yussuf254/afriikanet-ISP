@@ -20,6 +20,8 @@ const Testimonials = () => {
         autoplay: true,
         speed: 500,
         cssEase: "linear",
+        centerMode: false,
+        variableWidth: false,
         responsive: [
             {
                 breakpoint: 1200,
@@ -27,7 +29,9 @@ const Testimonials = () => {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     infinite: true,
-                    dots: true
+                    dots: true,
+                    centerMode: false,
+                    variableWidth: false
                 }
             },
             {
@@ -38,7 +42,8 @@ const Testimonials = () => {
                     infinite: true,
                     dots: true,
                     centerMode: false,
-                    variableWidth: false
+                    variableWidth: false,
+                    swipeToSlide: true
                 }
             }
         ]
@@ -51,31 +56,31 @@ const Testimonials = () => {
                     <h2 className="text-slate-900 text-3xl md:text-4xl lg:text-5xl font-bold mb-4">What Our Clients Say</h2>
                     <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">Hear from ISPs who transformed their businesses with Afriikanet.</p>
                 </div>
-                <div className="mx-0">
+                <div className="testimonial-slider">
                     <Slider {...settings}>
                         {TestimonialData.map((item, i) => (
-                            <div key={i}>
-                                <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0">
+                            <div key={i} className="px-2">
+                                <div className="bg-white rounded-2xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden shrink-0">
                                             <Image 
                                                 src={`${getImagePrefix()}${item.imgSrc}`}
                                                 alt={item.name} 
-                                                width={56} 
-                                                height={56} 
+                                                width={48} 
+                                                height={48} 
                                                 className="w-full h-full object-cover"
                                                 loading="lazy"
                                             />
                                         </div>
                                         <div>
-                                            <h3 className='text-base md:text-lg font-bold text-slate-900'>{item.name}</h3>
-                                            <h3 className='text-sm text-slate-500'>{item.profession}</h3>
+                                            <h3 className='text-sm md:text-base font-bold text-slate-900'>{item.name}</h3>
+                                            <h3 className='text-xs md:text-sm text-slate-500'>{item.profession}</h3>
                                         </div>
                                     </div>
-                                    <p className="text-slate-600 leading-relaxed mb-4 text-sm md:text-base">{item.comment}</p>
+                                    <p className="text-slate-600 leading-relaxed mb-4 text-xs md:text-sm flex-grow">{item.comment}</p>
                                     <div className="flex gap-1">
                                         {[...Array(5)].map((_, index) => (
-                                            <Icon key={index} icon="tabler:star-filled" className="text-amber-400 text-lg" />
+                                            <Icon key={index} icon="tabler:star-filled" className="text-amber-400 text-sm md:text-base" />
                                         ))}
                                     </div>
                                 </div>

@@ -99,13 +99,13 @@ const Header: React.FC = () => {
           onClick={closeMenu}
         />
         
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Full Screen */}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 z-50 flex flex-col ${navbarOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`lg:hidden fixed top-0 left-0 h-full w-full max-w-xs bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 z-50 ${navbarOpen ? "translate-x-0" : "-translate-x-full"}`}
         >
           {/* Menu Header with Logo */}
-          <div className="flex items-center justify-between p-4 border-b border-amber-500/30 shrink-0">
+          <div className="flex items-center justify-between p-4 border-b border-amber-500/30">
             <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
               <Image
                 src={`${getImagePrefix()}images/logo/logo.jpeg`}
@@ -128,8 +128,8 @@ const Header: React.FC = () => {
             </button>
           </div>
           
-          {/* Navigation Links - Scrollable */}
-          <div className="flex-1 overflow-y-auto p-4">
+          {/* Navigation Links */}
+          <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-280px)]">
             <nav className="flex flex-col space-y-2">
               {headerData.map((item, index) => (
                 <MobileHeaderLink 
@@ -142,7 +142,7 @@ const Header: React.FC = () => {
           </div>
           
           {/* CTA Buttons */}
-          <div className="p-4 space-y-3 shrink-0 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent">
+          <div className="absolute bottom-24 left-0 right-0 px-4 space-y-3">
             <Link
               href="#"
               className="w-full text-center bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-white px-4 py-3 rounded-xl font-medium hover:from-amber-500/30 hover:to-orange-500/30 transition-all flex items-center justify-center gap-2 border border-amber-500/30"
@@ -162,7 +162,7 @@ const Header: React.FC = () => {
           </div>
           
           {/* Social Media Links */}
-          <div className="border-t border-amber-500/30 p-4 shrink-0 bg-slate-900">
+          <div className="absolute bottom-0 left-0 right-0 border-t border-amber-500/30 p-4 bg-slate-900">
             <div className="flex justify-center gap-3">
               <a
                 href="https://www.facebook.com/share/17wMQyQ798/"
