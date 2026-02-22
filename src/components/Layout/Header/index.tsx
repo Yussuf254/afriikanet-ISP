@@ -99,10 +99,10 @@ const Header: React.FC = () => {
           onClick={closeMenu}
         />
         
-        {/* Mobile Menu - Full Screen */}
+        {/* Mobile Menu - Full Screen - opens from right */}
         <div
           ref={mobileMenuRef}
-          className={`lg:hidden fixed top-0 left-0 h-full w-full max-w-xs bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 z-50 ${navbarOpen ? "translate-x-0" : "-translate-x-full"}`}
+          className={`lg:hidden fixed top-0 right-0 h-full w-80 sm:w-96 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 shadow-2xl transform transition-transform duration-300 z-50 ${navbarOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           {/* Menu Header with Logo */}
           <div className="flex items-center justify-between p-4 border-b border-amber-500/30">
@@ -128,8 +128,8 @@ const Header: React.FC = () => {
             </button>
           </div>
           
-          {/* Navigation Links */}
-          <div className="flex-1 overflow-y-auto p-4 h-[calc(100%-280px)]">
+          {/* Navigation Links - Scrollable */}
+          <div className="flex-1 overflow-y-auto p-4" style={{ height: 'calc(100% - 280px)' }}>
             <nav className="flex flex-col space-y-2">
               {headerData.map((item, index) => (
                 <MobileHeaderLink 
