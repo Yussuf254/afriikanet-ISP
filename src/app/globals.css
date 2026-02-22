@@ -149,3 +149,24 @@ html {
   height: 100%;
   flex-grow: 1;
 }
+
+/* Ensure all cards in slider have equal height */
+.slick-slider .slick-track, .slick-slider .slick-list {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.slick-slider .slick-track > div, .slick-slider .slick-list > div > div {
+  height: 100% !important;
+  display: flex !important;
+}
+
+.slick-slide > div {
+  height: 100%;
+  display: flex;
+}
+
+.slick-slide > div > div {
+  height: 100%;
+  flex-grow: 1;
+}
