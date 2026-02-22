@@ -10,10 +10,6 @@ export const headerData: HeaderItem[] = [
       { label: "Our Team", href: "/team", icon: "heroicons:users" },
       { label: "Careers", href: "/careers", icon: "heroicons:briefcase" },
       { label: "Services", href: "/services", icon: "heroicons:cube" },
-      { label: "Service Agreement", href: "/agreement", icon: "heroicons:document-text" },
-      { label: "Service Contract", href: "/contract", icon: "heroicons:document-check" },
-      { label: "Privacy Policy", href: "/privacy", icon: "heroicons:shield-check" },
-      { label: "Terms & Conditions", href: "/terms", icon: "heroicons:scale" },
     ]
   },
   { label: "Solutions", href: "/#solutions" },

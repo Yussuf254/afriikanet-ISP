@@ -5,27 +5,40 @@ import { Icon } from "@iconify/react";
 import { getImagePrefix } from '@/utils/util';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+// Lazy load animation component
+const AnimatedCounter = dynamic(() => import('../AnimatedCounter'), {
+    loading: () => <div className="h-20"></div>,
+    ssr: false
+});
 
 const Hero = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => setImageLoaded(true), 100);
-        return () => clearTimeout(timer);
+        const visibilityTimer = setTimeout(() => setIsVisible(true), 200);
+        return () => {
+            clearTimeout(timer);
+            clearTimeout(visibilityTimer);
+        };
     }, []);
 
     return (
-        <section id="home-section" className='bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-[80vh] sm:min-h-screen flex items-center relative overflow-hidden'>
-            {/* Background image covering the entire area */}
+        <section 
+            id="home-section" 
+            className='bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-[80vh] sm:min-h-screen flex items-center relative overflow-hidden'
+        >
             <div
                 className={`absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transition-opacity duration-1000 ${imageLoaded ? 'opacity-40' : 'opacity-0'}`}
                 style={{ backgroundImage: `url(/images/banner/mahila.jpg)` }}
             ></div>
-            {/* Overlay for better text readability */}
             <div className='absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-800/40 to-slate-900/60 z-0'></div>
 
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 relative z-10">
-                <div className='flex flex-col items-center text-center max-w-4xl mx-auto'>
+                <div className={`flex flex-col items-center text-center max-w-4xl mx-auto transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className='flex flex-col gap-6 sm:gap-8'>
                         <div className='inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-3 sm:px-4 py-2 w-fit mx-auto'>
                             <Icon
@@ -55,24 +68,26 @@ const Hero = () => {
                                 Our Services
                             </Link>
                         </div>
-                        <div className='flex flex-wrap gap-x-4 gap-y-2 sm:gap-6 pt-4 justify-center sm:justify-start'>
-                            <div className='flex items-center gap-2 sm:gap-3'>
-                                <div className='bg-green-500/20 p-2 sm:p-3 rounded-full'>
-                                    <Icon icon="solar:check-circle-bold" className="text-green-400 text-lg sm:text-xl" />
+                        <div className='pt-4 w-full'>
+                            <div className='grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto'>
+                                <div className='flex items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-slate-800/50 backdrop-blur-sm px-3 py-2.5 rounded-lg border border-slate-700/50'>
+                                    <div className='bg-green-500/20 p-2 sm:p-2.5 rounded-full shrink-0'>
+                                        <Icon icon="solar:check-circle-bold" className="text-green-400 text-lg sm:text-xl" />
+                                    </div>
+                                    <p className='text-slate-300 font-medium text-xs sm:text-sm whitespace-nowrap'>Automated Billing</p>
                                 </div>
-                                <p className='text-slate-300 font-medium text-sm sm:text-base'>Automated Billing</p>
-                            </div>
-                            <div className='flex items-center gap-2 sm:gap-3'>
-                                <div className='bg-amber-500/20 p-2 sm:p-3 rounded-full'>
-                                    <Icon icon="solar:bolt-bold" className="text-amber-400 text-lg sm:text-xl" />
+                                <div className='flex items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-slate-800/50 backdrop-blur-sm px-3 py-2.5 rounded-lg border border-slate-700/50'>
+                                    <div className='bg-amber-500/20 p-2 sm:p-2.5 rounded-full shrink-0'>
+                                        <Icon icon="solar:bolt-bold" className="text-amber-400 text-lg sm:text-xl" />
+                                    </div>
+                                    <p className='text-slate-300 font-medium text-xs sm:text-sm whitespace-nowrap'>Real-time Analytics</p>
                                 </div>
-                                <p className='text-slate-300 font-medium text-sm sm:text-base'>Real-time Analytics</p>
-                            </div>
-                            <div className='flex items-center gap-2 sm:gap-3'>
-                                <div className='bg-orange-500/20 p-2 sm:p-3 rounded-full'>
-                                    <Icon icon="ion:headset" className="text-orange-400 text-lg sm:text-xl" />
+                                <div className='flex items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-slate-800/50 backdrop-blur-sm px-3 py-2.5 rounded-lg border border-slate-700/50'>
+                                    <div className='bg-orange-500/20 p-2 sm:p-2.5 rounded-full shrink-0'>
+                                        <Icon icon="ion:headset" className="text-orange-400 text-lg sm:text-xl" />
+                                    </div>
+                                    <p className='text-slate-300 font-medium text-xs sm:text-sm whitespace-nowrap'>24/7 Support</p>
                                 </div>
-                                <p className='text-slate-300 font-medium text-sm sm:text-base'>24/7 Support</p>
                             </div>
                         </div>
                     </div>
