@@ -73,7 +73,7 @@ const Testimonials = () => {
                                     </div>
                                     <p className="text-slate-600 leading-relaxed mb-4">{item.comment}</p>
                                     <div className="flex gap-0.5">
-                                        {[...Array(5)].map((_, index) => (
+                                        {[...Array(item.rating)].map((_, index) => (
                                             <Icon key={index} icon="tabler:star-filled" className="text-amber-400 text-base" />
                                         ))}
                                     </div>
