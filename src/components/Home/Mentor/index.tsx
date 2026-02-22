@@ -54,7 +54,7 @@ const Team = () => {
                 <Slider {...settings}>
                     {MentorData.map((member, i) => (
                         <div key={i} className="px-1">
-                            <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 h-full flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
+                            <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 min-h-[220px] flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shrink-0 border-3 border-amber-100 group-hover:border-amber-300 transition-colors">
                                         <Image
@@ -66,12 +66,12 @@ const Team = () => {
                                             loading="lazy"
                                         />
                                     </div>
-                                    <div>
-                                        <h3 className='text-base font-bold text-slate-900'>{member.name}</h3>
-                                        <h4 className='text-sm text-amber-600 font-medium'>{member.profession}</h4>
+                                    <div className="min-w-0">
+                                        <h3 className='text-base font-bold text-slate-900 truncate'>{member.name}</h3>
+                                        <h4 className='text-sm text-amber-600 font-medium truncate'>{member.profession}</h4>
                                     </div>
                                 </div>
-                                <div className="flex gap-2 mt-auto pt-2">
+                                <div className="flex gap-2 mt-auto pt-2 justify-start">
                                     <a href="#" className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
                                         <Icon icon="ri:linkedin-fill" className="text-sm" />
                                     </a>

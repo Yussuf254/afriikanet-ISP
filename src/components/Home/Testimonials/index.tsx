@@ -45,11 +45,11 @@ const Testimonials = () => {
                 </div>
                 
                 {/* Slider */}
-                <div className="slick-testimonials">
+                <div className="slick-testimonials -mx-1">
                     <Slider {...settings}>
                         {TestimonialData.slice(0, 6).map((item, i) => (
                             <div key={i} className="px-1">
-                                <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 h-full flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
+                                <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 min-h-[220px] flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden shrink-0 border-2 border-amber-100">
                                             <Image 
@@ -61,12 +61,12 @@ const Testimonials = () => {
                                                 loading="lazy"
                                             />
                                         </div>
-                                        <div>
-                                            <h3 className='text-base font-bold text-slate-900'>{item.name}</h3>
-                                            <h3 className='text-sm text-slate-500'>{item.profession}</h3>
+                                        <div className="min-w-0">
+                                            <h3 className='text-base font-bold text-slate-900 truncate'>{item.name}</h3>
+                                            <h3 className='text-sm text-slate-500 truncate'>{item.profession}</h3>
                                         </div>
                                     </div>
-                                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{item.comment}</p>
+                                    <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">{item.comment}</p>
                                     <div className="flex gap-1 mt-auto pt-2">
                                         {[...Array(item.rating)].map((_, index) => (
                                             <Icon key={index} icon="tabler:star-filled" className="text-amber-400 text-base" />
