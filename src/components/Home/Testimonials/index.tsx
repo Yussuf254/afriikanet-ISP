@@ -22,13 +22,13 @@ const Testimonials = () => {
         dotsClass: "slick-dots custom-dots",
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 1100,
                 settings: {
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
                 }
@@ -38,7 +38,7 @@ const Testimonials = () => {
 
     return (
         <section id="testimonials" className='bg-slate-50 py-16 md:py-20 overflow-hidden'>
-            <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4'>
+            <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-3 sm:px-4'>
                 <div className="text-center mb-12">
                     <h2 className="text-slate-900 text-3xl md:text-4xl lg:text-5xl font-bold mb-4">What Our Clients Say</h2>
                     <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">Hear from ISPs who transformed their businesses with Afriikanet.</p>
@@ -48,10 +48,10 @@ const Testimonials = () => {
                 <div className="slick-testimonials">
                     <Slider {...settings}>
                         {TestimonialData.slice(0, 6).map((item, i) => (
-                            <div key={i} className="px-3 py-4">
-                                <div className='bg-white rounded-2xl shadow-md border border-slate-100 p-6 h-full flex flex-col hover:shadow-xl hover:border-amber-200 transition-all duration-300'>
+                            <div key={i} className="px-1">
+                                <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 h-full flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 border-2 border-amber-100">
+                                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden shrink-0 border-2 border-amber-100">
                                             <Image 
                                                 src={`${getImagePrefix()}${item.imgSrc}`}
                                                 alt={item.name} 
