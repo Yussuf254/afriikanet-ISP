@@ -2,44 +2,15 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import dynamic from 'next/dynamic';
 
-// Animated Counter Component
-const Counter = ({ value, suffix, label }: { value: string; suffix: string; label: string }) => {
-    const [count, setCount] = useState(0);
-    const targetValue = parseInt(value.replace(/[^0-9]/g, ''));
-    const isPercentage = value.includes('%');
+// Lazy load AnimatedCounter
+const AnimatedCounter = dynamic(() => import("../AnimatedCounter"), { ssr: false });
 
-    useEffect(() => {
-        const duration = 2000;
-        const steps = 60;
-        const increment = targetValue / steps;
-        let current = 0;
-
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= targetValue) {
-                setCount(targetValue);
-                clearInterval(timer);
-            } else {
-                setCount(Math.floor(current));
-            }
-        }, duration / steps);
-
-        return () => clearInterval(timer);
-    }, [targetValue]);
-
-    return (
-        <div className="text-center">
-            <p className='text-2xl sm:text-3xl lg:text-4xl font-bold text-amber-600'>{isPercentage ? count + '%' : count.toLocaleString()}{suffix}</p>
-            <p className='text-slate-600 mt-1 text-sm'>{label}</p>
-        </div>
-    );
-};
-
-const Pricing = () => {
+const Courses = () => {
 
     const settings = {
         dots: true,
@@ -194,9 +165,41 @@ const Pricing = () => {
                         </div>
                     ))}
                 </div>
+                
+                {/* Solutions Section - What was missing */}
+                <div className="mt-16">
+                    <div className="text-center mb-12">
+                        <div className='inline-flex items-center gap-2 bg-amber-100 text-amber-600 px-4 py-2 rounded-full mb-4'>
+                            <Icon icon="solar:bulb-bold" className="text-lg" />
+                            <p className='text-sm font-medium'>Our Solutions</p>
+                        </div>
+                        <h2 className="text-slate-900 text-3xl lg:text-4xl font-bold mb-4">Comprehensive ISP Management</h2>
+                        <p className="text-slate-600 text-lg max-w-2xl mx-auto">Everything you need to run your ISP business efficiently</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {solutions.map((solution, index) => (
+                            <div key={index} className="bg-white rounded-xl p-6 border border-amber-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                                <div className="bg-gradient-to-br from-amber-500 to-orange-500 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
+                                    <Icon icon={solution.icon} className="text-white text-2xl" />
+                                </div>
+                                <h4 className="text-lg font-bold text-slate-900 mb-2">{solution.title}</h4>
+                                <p className="text-slate-600 mb-4">{solution.description}</p>
+                                <ul className="space-y-2">
+                                    {solution.features.map((feature, i) => (
+                                        <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
+                                            <Icon icon="solar:check-circle-bold" className="text-amber-500" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </section>
     );
 }
 
-export default Pricing;
+export default Courses;
