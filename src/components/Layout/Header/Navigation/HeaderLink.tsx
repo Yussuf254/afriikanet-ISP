@@ -42,7 +42,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       <Link
         href={item.href}
         onClick={handleToggle}
-        className={`text-sm font-medium py-2 px-3 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer ${
+        className={`text-sm font-medium py-1.5 px-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer ${
           isActive
             ? "text-amber-600 bg-amber-50"
             : "text-slate-600 hover:text-amber-600 hover:bg-slate-50"
@@ -69,7 +69,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
                 key={index}
                 href={subItem.href}
                 onClick={() => setSubmenuOpen(false)}
-                className={`block px-4 py-2.5 text-sm flex items-center gap-3 mx-2 rounded-lg transition-all duration-200 ${
+                className={`block px-4 py-2 text-sm flex items-center gap-3 mx-2 rounded-lg transition-all duration-200 ${
                   isSubItemActive
                     ? "bg-amber-50 text-amber-600 font-medium"
                     : "text-slate-600 hover:text-amber-600 hover:bg-slate-50"

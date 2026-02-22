@@ -9,7 +9,6 @@ export const headerData: HeaderItem[] = [
       { label: "About Us", href: "/about", icon: "heroicons:user-group" },
       { label: "Our Team", href: "/team", icon: "heroicons:users" },
       { label: "Careers", href: "/careers", icon: "heroicons:briefcase" },
-      { label: "Services", href: "/services", icon: "heroicons:cube" },
     ]
   },
   { label: "Solutions", href: "/#solutions" },

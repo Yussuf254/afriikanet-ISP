@@ -23,17 +23,11 @@ const Testimonials = () => {
             {
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 3,
-                }
-            },
-            {
-                breakpoint: 1000,
-                settings: {
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 530,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                 }
@@ -53,10 +47,10 @@ const Testimonials = () => {
                 <div className="slick-testimonials">
                     <Slider {...settings}>
                         {TestimonialData.slice(0, 6).map((item, i) => (
-                            <div key={i} className="px-2">
-                                <div className='px-4 py-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 md:hover:-translate-y-2 overflow-hidden h-full'>
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
+                            <div key={i} className="px-1 sm:px-2">
+                                <div className='px-3 py-4 sm:px-4 sm:py-6 bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 overflow-hidden h-full flex flex-col'>
+                                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0">
                                             <Image 
                                                 src={`${getImagePrefix()}${item.imgSrc}`}
                                                 alt={item.name} 
@@ -71,8 +65,8 @@ const Testimonials = () => {
                                             <h3 className='text-sm text-slate-500'>{item.profession}</h3>
                                         </div>
                                     </div>
-                                    <p className="text-slate-600 leading-relaxed mb-4">{item.comment}</p>
-                                    <div className="flex gap-0.5">
+                                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">{item.comment}</p>
+                                    <div className="flex gap-0.5 mt-auto">
                                         {[...Array(item.rating)].map((_, index) => (
                                             <Icon key={index} icon="tabler:star-filled" className="text-amber-400 text-base" />
                                         ))}
