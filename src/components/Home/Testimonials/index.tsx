@@ -38,8 +38,8 @@ const Testimonials = () => {
     return (
         <section id="testimonials" className='bg-slate-50 py-12 md:py-16 overflow-hidden'>
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4'>
-                <div className="text-center mb-16">
-                    <h2 className="text-slate-900 text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">What Our Clients Say</h2>
+                <div className="text-center mb-10 md:mb-16">
+                    <h2 className="text-slate-900 text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">What Our Clients Say</h2>
                     <p className="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">Hear from ISPs who transformed their businesses with Afriikanet.</p>
                 </div>
                 

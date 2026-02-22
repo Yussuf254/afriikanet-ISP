@@ -19,19 +19,13 @@ const Team = () => {
         cssEase: "linear",
         responsive: [
             {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                }
-            },
-            {
-                breakpoint: 1000,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
                 }
             },
             {
-                breakpoint: 530,
+                breakpoint: 640,
                 settings: {
                     slidesToShow: 1,
                 }
@@ -42,17 +36,17 @@ const Team = () => {
     return (
         <section className="bg-slate-50 py-12 md:py-16" id="team" >
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4'>
-                <div className="text-center mb-16">
-                    <h2 className="text-slate-900 text-4xl lg:text-5xl font-bold mb-4">Meet Our Team</h2>
-                    <p className="text-slate-600 text-lg max-w-2xl mx-auto">The experts behind Afriikanet's powerful billing solution.</p>
+                <div className="text-center mb-10 md:mb-16">
+                    <h2 className="text-slate-900 text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">Meet Our Team</h2>
+                    <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto">The experts behind Afriikanet's powerful billing solution.</p>
                 </div>
 
                 <Slider {...settings}>
                     {MentorData.map((member, i) => (
-                        <div key={i}>
-                            <div className='m-2 sm:m-3 text-center px-3 py-6 sm:px-4 sm:py-8 bg-white rounded-xl sm:rounded-2xl shadow-md sm:shadow-lg hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 overflow-hidden h-full flex flex-col'>
-                                <div className="relative mb-4 sm:mb-6 flex justify-center shrink-0">
-                                    <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full overflow-hidden border-4 border-amber-100 shadow-lg">
+                        <div key={i} className="px-1 sm:px-2">
+                            <div className='m-2 text-center px-3 py-5 sm:px-4 sm:py-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col'>
+                                <div className="relative mb-4 flex justify-center shrink-0">
+                                    <div className="w-20 h-20 sm:w-28 sm:h-28 mx-auto rounded-full overflow-hidden border-4 border-amber-100 shadow-lg">
                                         <Image
                                             src={`${getImagePrefix()}${member.imgSrc}`}
                                             alt={member.name}
@@ -63,9 +57,9 @@ const Team = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="mt-auto">
-                                    <h3 className='text-xl font-bold text-slate-900'>{member.name}</h3>
-                                    <h4 className='text-amber-600 font-medium mt-1'>{member.profession}</h4>
+                                <div className="mt-auto py-2">
+                                    <h3 className='text-lg sm:text-xl font-bold text-slate-900'>{member.name}</h3>
+                                    <h4 className='text-amber-600 font-medium mt-1 text-sm sm:text-base'>{member.profession}</h4>
                                 </div>
                             </div>
                         </div>
