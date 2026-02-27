@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import dynamic from 'next/dynamic';
 
 const Courses = dynamic(() => import("@/components/Home/Courses"), { ssr: false });
-const Team = dynamic(() => import("@/components/Home/Mentor"), { ssr: false });
 const Testimonials = dynamic(() => import("@/components/Home/Testimonials"), { ssr: false });
 const Newsletter = dynamic(() => import("@/components/Home/Newsletter"), { ssr: false });
 const AnimatedCounter = dynamic(() => import("@/components/Home/AnimatedCounter"), { ssr: false });
@@ -176,7 +175,6 @@ export default function Home() {
       </section>
       
       <Courses />
-      <Team />
       <Testimonials />
       <Newsletter />
     </main>
