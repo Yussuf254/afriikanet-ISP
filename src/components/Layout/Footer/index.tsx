@@ -114,11 +114,7 @@ const Footer = () => {
 
         <div className='mt-12 pt-8 border-t border-white/10'>
           <div className="flex flex-col items-center text-center gap-2">
-            <p className='text-slate-400 text-sm'>© 2025 Pioneer Afriikanet Technologies Ltd.</p>
-            <p className='text-slate-400 text-sm'>All Rights Reserved.</p>
-          </div>
-          <div className="flex gap-6 justify-center mt-4">
-            <Link href="/privacy" className='text-slate-400 text-sm hover:text-amber-400 transition-colors'>Privacy Policy</Link>
+            <p className='text-slate-400 text-sm'>© 2025 Pioneer Afriikanet Technologies Ltd. All Rights Reserved.</p>
             <Link href="/terms" className='text-slate-400 text-sm hover:text-amber-400 transition-colors'>Terms & Conditions</Link>
           </div>
         </div>
