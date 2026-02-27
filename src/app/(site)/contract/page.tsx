@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
 
 export const metadata: Metadata = {
     title: "Service Contract - Afriikanet",
@@ -10,8 +12,9 @@ export const metadata: Metadata = {
 export default function ContractPage() {
     return (
         <>
+            <Header />
             {/* Header Section */}
-            <section className="bg-gradient-to-r from-slate-800 to-slate-900 py-20">
+            <section className="bg-gradient-to-r from-slate-800 to-slate-900 py-20 pt-32">
                 <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 text-center">
                     <h1 className="text-4xl font-bold text-white mb-4">Service Contract</h1>
                     <p className="text-xl text-amber-400">Service Level Agreement and Contract Terms</p>
@@ -165,6 +168,7 @@ export default function ContractPage() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     );
 }
