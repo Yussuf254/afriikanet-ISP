@@ -45,26 +45,24 @@ const Team = () => {
                 </div>
 
                 {/* Slider */}
-                <div className="slick-team -mx-1">
+                <div className="slick-team -mx-2">
                     <Slider {...settings}>
                         {MentorData.map((member, i) => (
-                            <div key={i} className="px-1">
-                                <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 min-h-[220px] flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
-                                    <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border-2 border-amber-100 relative">
-                                            <Image
-                                                src={`${getImagePrefix()}${member.imgSrc}`}
-                                                alt={member.name}
-                                                fill
-                                                className="w-full h-full object-cover"
-                                                sizes="80px"
-                                                loading="lazy"
-                                            />
-                                        </div>
-                                        <div className="min-w-0">
-                                            <h3 className='text-base font-bold text-slate-900 truncate'>{member.name}</h3>
-                                            <h3 className='text-sm text-amber-600 truncate'>{member.profession}</h3>
-                                        </div>
+                            <div key={i} className="px-2">
+                                <div className='bg-white rounded-lg shadow-sm border border-slate-200 p-4 flex items-center gap-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 h-[140px]'>
+                                    <div className="w-24 h-24 rounded-lg overflow-hidden shrink-0 relative">
+                                        <Image
+                                            src={`${getImagePrefix()}${member.imgSrc}`}
+                                            alt={member.name}
+                                            fill
+                                            className="w-full h-full object-cover"
+                                            sizes="96px"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                        <h3 className='text-base font-bold text-slate-900 truncate'>{member.name}</h3>
+                                        <h3 className='text-sm text-amber-600 truncate'>{member.profession}</h3>
                                     </div>
                                 </div>
                             </div>
