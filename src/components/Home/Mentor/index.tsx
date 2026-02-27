@@ -49,20 +49,22 @@ const Team = () => {
                     <Slider {...settings}>
                         {MentorData.map((member, i) => (
                             <div key={i} className="px-1">
-                                <div className='bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden hover:shadow-2xl hover:border-amber-300 hover:scale-[1.02] transition-all duration-300 w-full h-full flex flex-col'>
-                                    <div className="relative h-48 w-full shrink-0">
-                                        <Image
-                                            src={`${getImagePrefix()}${member.imgSrc}`}
-                                            alt={member.name}
-                                            fill
-                                            className="w-full h-full object-cover object-top"
-                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            loading="lazy"
-                                        />
-                                    </div>
-                                    <div className="p-4 text-center flex flex-col justify-center flex-1 min-h-[100px]">
-                                        <h3 className='text-lg font-bold text-slate-900 mb-1'>{member.name}</h3>
-                                        <h4 className='text-sm text-amber-600 font-medium'>{member.profession}</h4>
+                                <div className='bg-white rounded-xl sm:rounded-2xl shadow-md border border-slate-100 p-4 sm:p-6 min-h-[220px] flex flex-col hover:shadow-lg hover:border-amber-200 transition-all duration-300'>
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shrink-0 border-2 border-amber-100 relative">
+                                            <Image
+                                                src={`${getImagePrefix()}${member.imgSrc}`}
+                                                alt={member.name}
+                                                fill
+                                                className="w-full h-full object-cover"
+                                                sizes="80px"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <h3 className='text-base font-bold text-slate-900 truncate'>{member.name}</h3>
+                                            <h3 className='text-sm text-amber-600 truncate'>{member.profession}</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
