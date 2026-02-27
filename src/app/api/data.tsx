@@ -74,26 +74,30 @@ export const pricingData: {
     },
   ]
 
-export const MentorData: { profession: string; name: string; imgSrc: string }[] = [
+export const MentorData: { profession: string; name: string; imgSrc: string; message: string }[] = [
   {
     profession: 'Director/CEO',
     name: 'Hamisi Yusuf Suleiman',
     imgSrc: '/images/mentor/user1.jpg',
+    message: 'Our journey began with a simple yet powerful vision: to transform how Internet Service Providers across Africa manage their businesses. We understood the unique challenges faced by ISPs on the continent, and we built Afriikanet from the ground up to address these needs.',
   },
   {
     profession: 'CTO',
     name: 'Abdi Mohammed',
     imgSrc: '/images/mentor/user2.jpg',
+    message: 'Technical excellence is at the core of everything we do. Our team continuously works to ensure Afriikanet remains robust, secure, and scalable for ISPs of all sizes.',
   },
   {
     profession: 'Operations Manager',
     name: 'Fatma Ali',
     imgSrc: '/images/mentor/user3.jpg',
+    message: 'Efficient operations are the backbone of any successful ISP. We strive to streamline processes and provide tools that help our clients focus on what matters most - serving their customers.',
   },
   {
     profession: 'Sales Director',
     name: 'Khalfan Mohamed',
     imgSrc: '/images/mentor/user4.jpg',
+    message: 'Building lasting relationships with our clients is my passion. We are committed to understanding their needs and delivering solutions that exceed expectations.',
   },
 ]
 
