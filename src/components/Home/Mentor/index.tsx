@@ -20,6 +20,8 @@ const Team = () => {
         autoplaySpeed: 4000,
         pauseOnHover: true,
         dotsClass: "slick-dots custom-dots",
+        centerMode: false,
+        variableWidth: false,
         responsive: [
             {
                 breakpoint: 1100,
