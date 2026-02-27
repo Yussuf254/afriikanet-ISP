@@ -24,7 +24,9 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  @apply bg-white text-slate-800;
+  @apply bg-slate-100 text-slate-800;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
 }
 
 section {
@@ -82,9 +84,18 @@ html {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-orange-500;
 }
 
-/* Card hover effects */
+/* Card hover effects with glossy finish */
 .card-hover {
   @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(248,250,252,0.8));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+.card-hover:hover {
+  background: linear-gradient(145deg, rgba(255,255,255,1), rgba(255,255,255,0.95));
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04), 0 0 15px rgba(245,158,11,0.15);
 }
 
 /* Button styles */
